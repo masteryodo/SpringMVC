@@ -2,6 +2,7 @@ package com.demo.spring.dao;
 
 import java.util.List;
 import com.demo.spring.model.Phone;
+
 public interface PhoneDAO {
     public void addPhone(Phone p);
     public void updatePhone(Phone p);
