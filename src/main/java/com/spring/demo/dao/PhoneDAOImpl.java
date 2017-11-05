@@ -21,21 +21,17 @@ public class PhoneDAOImpl implements PhoneDAO
     @Override
     public void addPhone(Phone p)
     {
-        Session session = this.sessionFactory.getCurrentSession(
-        );
+        Session session = this.sessionFactory.getCurrentSession();
         session.persist(p);
-        logger.info("Phone saved successfully, Phone Details=" +
-                p);
+        logger.info("Phone saved successfully, Phone Details=" + p);
     }
 
     @Override
     public void updatePhone(Phone p)
     {
-        Session session = this.sessionFactory.getCurrentSession(
-        );
+        Session session = this.sessionFactory.getCurrentSession();
         session.update(p);
-        logger.info("Phone updated successfully, Phone Details="
-                + p);
+        logger.info("Phone updated successfully, Phone Details=" + p);
     }
 
     @SuppressWarnings("unchecked")
