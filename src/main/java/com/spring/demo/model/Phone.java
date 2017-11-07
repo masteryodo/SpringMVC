@@ -3,8 +3,7 @@ package com.spring.demo.model;
 import javax.persistence.*;
 
 /**
- * Entity bean with JPA annotations Hibernate provides JPA imple
- mentation
+ * Entity bean with JPA annotations Hibernate provides JPA implementation
  */
 @Entity
 @Table(name = "PHONE")
