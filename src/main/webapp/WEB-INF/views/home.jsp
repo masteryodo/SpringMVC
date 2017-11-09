@@ -45,8 +45,7 @@
 <h1>Welcome</h1>
 <p>
     ${message}<br/>
-    <a href="${pageContext.request.contextPath}/phones">Click here t
-        o generate the Phone List</a><br/>
+    <a href="${pageContext.request.contextPath}/phones">Click here to generate the Phone List</a><br/>
 </p>
 </body>
 </html>

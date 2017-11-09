@@ -1,4 +1,4 @@
-package com.spring.demo.model;
+package com.spring.demo.entity;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -20,6 +20,8 @@ public class User
     private Date lastEntrance;
     @Column(name = "confirmed")
     private boolean confirmed = false;
+
+    public User(){}
 
     public long getId()
     {

@@ -1,12 +1,12 @@
 package com.spring.demo.service;
 
-import com.spring.demo.model.User;
+import com.spring.demo.entity.User;
+
+import java.util.List;
 
 public interface UserService
 {
-    void addUser(User user);
+    User getUser(String login);
 
-    void removeUser(User user);
-
-    User getUserById(Long id);
+    List<User> listUsers();
 }

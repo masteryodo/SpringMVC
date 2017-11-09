@@ -1,9 +1,10 @@
 package com.spring.demo.service;
 
 import com.spring.demo.dao.*;
-import com.spring.demo.model.User;
+import com.spring.demo.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 public class UserServiceImpl implements UserService
 {
@@ -16,22 +17,13 @@ public class UserServiceImpl implements UserService
     }
 
     @Override
-    @Transactional
-    public void addUser(User user)
+    public User getUser(String login)
     {
-
+        return userDAO.getUserByName(login);
     }
 
     @Override
-    @Transactional
-    public void removeUser(User user)
-    {
-
-    }
-
-    @Override
-    @Transactional
-    public User getUserById(Long id)
+    public List<User> listUsers()
     {
         return null;
     }

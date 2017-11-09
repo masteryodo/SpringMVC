@@ -1,10 +1,8 @@
 package com.spring.demo.dao;
 
-import com.spring.demo.model.User;
-import org.hibernate.SessionFactory;
+import com.spring.demo.entity.User;
+import org.hibernate.*;
 import org.slf4j.*;
-
-import java.util.List;
 
 public class UserDAOImpl implements UserDAO
 {
@@ -17,32 +15,21 @@ public class UserDAOImpl implements UserDAO
     }
 
     @Override
-    public void addUser(User user)
-    {
-
-    }
-
-    @Override
-    public void updateUser(User user)
-    {
-
-    }
-
-    @Override
-    public List<User> listUsers()
-    {
-        return null;
-    }
-
-    @Override
     public User getUserById(long id)
     {
-        return null;
+        Session session = this.sessionFactory.getCurrentSession();
+        User user = (User)session.load(User.class, id);
+        logger.info("User loaded successfully, User details="+ user);
+        return user;
     }
 
     @Override
-    public void removeUser(long id)
+    public User getUserByName(String name)
     {
-
+        Query query = this.sessionFactory.getCurrentSession().createQuery("from USERS where name=:name");
+        query.setParameter("name", name);
+        User user = (User)query.uniqueResult();
+        logger.info("User loaded successfully, User details="+ user);
+        return user;
     }
 }
